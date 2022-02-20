@@ -88,7 +88,7 @@ void loop()
 	char buf[CMDLEN];
 	while (!quit) {
 		// this will block utils message in coming
-		read(fd, &val, ARRAYSIZE(buf));
+		read(fd, &val, sizeof(uint64_t));
 		kfifo_get(queue, (uint8_t*)buf, ARRAYSIZE(buf));
 		// process command string
 		// TODO
